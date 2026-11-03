@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nita Nies · Página no encontrada</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-404">
+<main class="e404">
+  <a href="./" aria-label="Nita Nies, inicio" style="color:inherit"><svg class="logo-mark big" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a5 5 0 0 0-5 5c0 4 3 5 3 8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="16" cy="21" r="5.5" fill="currentColor"/></svg></a>
+  <h1 id="t">Este pendiente no tiene par</h1>
+  <p id="s">La página que buscas no está aquí.</p>
+  <a class="btn-home" id="b" href="./">Volver a Nita Nies</a>
+</main>
+<script>
+const M={
+es:["Página no encontrada","Este pendiente no tiene par","La página que buscas no está aquí.","Volver a Nita Nies"],
+en:["Page not found","This earring has no pair","The page you're looking for isn't here.","Back to Nita Nies"],
+fr:["Page introuvable","Cette boucle n'a pas de paire","La page que vous cherchez n'est pas ici.","Retour à Nita Nies"],
+de:["Seite nicht gefunden","Dieser Ohrring hat kein Gegenstück","Die gesuchte Seite ist nicht hier.","Zurück zu Nita Nies"],
+it:["Pagina non trovata","Questo orecchino non ha il suo paio","La pagina che cerchi non è qui.","Torna a Nita Nies"],
+pt:["Página não encontrada","Este brinco ficou sem par","A página que procuras não está aqui.","Voltar à Nita Nies"],
+tr:["Sayfa bulunamadı","Bu küpenin eşi yok","Aradığınız sayfa burada değil.","Nita Nies'e dön"]};
+const u=new URLSearchParams(location.search).get("lang");
+const l=(Object.keys(M).includes(u)?u:null)||localStorage.getItem("nita-nies-lang")
+ ||(Object.keys(M).includes((navigator.language||"es").slice(0,2))?(navigator.language||"es").slice(0,2):"es");
+const m=M[l];
+document.documentElement.lang=l;
+document.title="Nita Nies · "+m[0];
+document.getElementById("t").textContent=m[1];
+document.getElementById("s").textContent=m[2];
+document.getElementById("b").textContent=m[3];
+</script>
+</body>
+</html>
